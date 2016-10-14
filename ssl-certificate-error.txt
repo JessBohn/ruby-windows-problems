@@ -1,0 +1,6 @@
+When trying to update rubygems or any ruby gem I receive this following error:
+
+  ERROR:  Could not find a valid gem 'rubygems-update' (= 2.6.6), here is why:
+        Unable to download data from https://rubygems.org/ -
+        SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B:
+        certificate verify failed (https://api.rubygems.org/specs.4.8.gz)
