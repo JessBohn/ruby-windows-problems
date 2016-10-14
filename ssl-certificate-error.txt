@@ -4,3 +4,15 @@ When trying to update rubygems or any ruby gem I receive this following error:
         Unable to download data from https://rubygems.org/ -
         SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B:
         certificate verify failed (https://api.rubygems.org/specs.4.8.gz)
+
+The specific message above was being received when trying to run 'gem install
+rubygems-update', which meant that I could not even run the gem installation
+to update my rubygems
+
+Actual problem:
+  Some of the versions of RubyGems are unstable and their infrastructure is
+  different than the stable versions, which is most versions. The version of
+  RubyGems that I had installed must have had a bug in it where the link SSL
+  Certification was missing, which was preventing the connection to rubygems.org
+  where your computer requests the information for each gem. This prevented any
+  gem, including RubyGems, from being installed and/or updated.
