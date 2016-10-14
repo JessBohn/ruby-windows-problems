@@ -1,0 +1,38 @@
+When trying to update rubygems or any ruby gem I receive this following error:
+
+  ERROR:  Could not find a valid gem 'rubygems-update' (= 2.6.6), here is why:
+        Unable to download data from https://rubygems.org/ -
+        SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B:
+        certificate verify failed (https://api.rubygems.org/specs.4.8.gz)
+
+The specific message above was being received when trying to run 'gem install
+rubygems-update', which meant that I could not even run the gem installation
+to update my rubygems
+
+Actual problem:
+  Some of the versions of RubyGems are unstable and their infrastructure is
+  different than the stable versions, which is most versions. The version of
+  RubyGems that I had installed must have had a bug in it where the link SSL
+  Certification was missing, which was preventing the connection to rubygems.org
+  where your computer requests the information for each gem. This prevented any
+  gem, including RubyGems, from being installed and/or updated.
+
+
+SOLUTION:
+    (*If you want to update to the most recent version of RubyGems)
+    Go to:
+      https://rubygems.org/pages/download#formats
+
+    (You can simply follow the instructions there or read my synopsis below)
+    Download the latest version of RubyGems ( I chose to download ZIP file )
+    For best practices and to better keep track of your gem information, move
+    the file to the directory where all of your other Ruby/Rails setup files
+    are kept. After you have moved the folder, go to your command line and
+    cd to this directory then run
+      'ruby setup.rb'
+    This should have updated whichever version of RubyGems you had to now the most
+    recent version. Test this by trying to install a new gem.
+      'gem install gamertag'
+    Yes, that's a real gem. If you already have that gem test a different one.
+    If you no longer receive the above error message then you have successfully
+    solved your SSL Certification Error! Rejoice.
