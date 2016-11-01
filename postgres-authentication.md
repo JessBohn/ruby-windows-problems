@@ -19,3 +19,7 @@ Tasks: TOP => db:create
 (See full trace by running task with --trace)
 
 The error message always contains the 'no password supplied' and hash along with the rails (or rake) aborted!
+
+**Things I Tried**
+
+- I originally tried to uncomment the password section inside of the database yaml file, but then the error message said that the authentication failed due to the username. So I also added my username, but then it said that the password and username did not match, even after resetting both of them.
