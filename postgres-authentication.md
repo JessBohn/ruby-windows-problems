@@ -23,3 +23,10 @@ The error message always contains the 'no password supplied' and hash along with
 **Things I Tried**
 
 - I originally tried to uncomment the password section inside of the database yaml file, but then the error message said that the authentication failed due to the username. So I also added my username, but then it said that the password and username did not match, even after resetting both of them.
+
+- I setup a username and password with PGAdmin and used them as environmental variables.
+  - I added an intializer file to house the environmental variables for the different environments with the username and password created using the PGAdmin.
+  - A yaml file was added to the config folder to call on the ENVs before configuring each of the database environments so that the user can be
+  authenticated and the databases can be created.
+  - The database yaml file was also changed to include the ENVs in their proper spot using code code integration with <%= %>
+  - However, when trying to run the db commands it either says no password supplied and that the username and password do not match
