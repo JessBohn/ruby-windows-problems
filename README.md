@@ -12,6 +12,7 @@ Common run-ins with Ruby/Rails using Windows 10
   [Solution](https://github.com/JessBohn/ruby-windows-problems/blob/master/ssl-certificate-error.txt, "SSL Certification Error Solution")
 
 * **Postgresql Authentication Error**
+  Currently backlogged - used quick, unsecure fix, will return to problem later
   When trying to run database commands in Rails apps configured with postgresql instead of sqlite3 I received the following error:
   ```
   fe_sendauth: no password supplied
@@ -23,4 +24,3 @@ Common run-ins with Ruby/Rails using Windows 10
   Tasks: TOP => db:create
   (See full trace by running task with --trace)
   ```
-  
