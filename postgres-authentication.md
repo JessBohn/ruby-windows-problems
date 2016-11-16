@@ -30,3 +30,6 @@ The error message always contains the 'no password supplied' and hash along with
   authenticated and the databases can be created.
   - The database yaml file was also changed to include the ENVs in their proper spot using code code integration with <%= %>
   - However, when trying to run the db commands it either says no password supplied and that the username and password do not match
+
+  UPDATE:
+    I recently gave up on this method. While everything is still setup for this method and I will return to try and fix it later, I decided to choose a quick, and totally unsecure, fix to my problem. I added the login information directly into the database yaml file. Due to time constraints and needing to work on projects, I had to do this for now.
